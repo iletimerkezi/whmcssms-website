@@ -141,6 +141,9 @@ async function sendEmail(form) {
     </b> you can contact us.
   `
 
+  let trSubject = 'WHMCS SMS Eklenti Kurulum Bilgileri'
+  let enSubject = 'WHMCS SMS Addon Setup Information'
+
   return fetch(new Request('https://api.mailchannels.net/tx/v1/send', {
     method: 'POST',
       headers: {
@@ -156,7 +159,7 @@ async function sendEmail(form) {
           email: 'no-reply@whmcssms.com',
           name: 'WHMCS SMS',
         },
-        subject: 'WHMCS SMS Addon Setup Information',
+        subject: form.lang === 'tr' ? trSubject : enSubject,
         content: [
           {
             type: 'text/html',
