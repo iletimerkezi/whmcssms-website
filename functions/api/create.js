@@ -19,12 +19,12 @@ export async function onRequestPost({request}) {
   );
 
   if(! isEmailValid) {
-    return errorRsp(['Please enter valid email address.'])
+    return errorRsp(['Email adresinizi doğrulayamadık.'])
   }
 
   const emailRsp = await sendEmail(form)
   if(! emailRsp.ok) {
-    return errorRsp(['Please try again, we could not send the email to your email address.'])
+    return errorRsp(['Epostayı gönderemedik, lütfen tekrar deneyin.'])
   }
 
   return new Response(JSON.stringify({

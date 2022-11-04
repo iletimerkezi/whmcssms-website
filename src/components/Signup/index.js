@@ -3,16 +3,15 @@ import React, {Fragment, useState} from 'react';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 
 const BackendErrors = {
-  "The name surname field is required.": "İsim Soyisim alanını doldurmalısınız.",
-  "The name surname must be at least 6 characters.": "İsim Soyisim alanı en az 6 karakter içermelidir.",
-  "The gsm field is required.": "Cep Telefonu alanını doldurmalısınız.",
-  "The gsm must be 10 characters.": "Cep Telefonu numaranız en az 10 karakterden oluşmalı.",
-  "The password field is required.": "Şifre alanını doldurmalısınız.",
-  "The password must be at least 6 characters.": "Şifreniz en az 6 karakterden oluşmalıdır.",
-  "Please try later.": "Lütfen daha sonra tekrar deneyiniz.",
-  "Please enter valid email address.": "Email adresinizi doğrulayamadık.",
-  "Please try again, we could not send the email to your email address.": "Epostayı gönderemedik, lütfen tekrar deneyin.",
-  "Please check your internet connection.": "İnternet bağlantınızı kontrol edip tekrar deneyiniz."
+  "Ad Soyad alanını doldurmalısınız.": "The name surname field is required.",
+  "Cep Telefonu alanını doldurmalısınız.": "The gsm field is required.",
+  "Şifre alanını doldurmalısınız.": "The password field is required.",
+  "name surname değeri 6 karakterden büyük olmalıdır.": "The name surname must be at least 6 characters.",
+  "gsm 10 karakter olmalıdır.": "The phone number must be 10 characters.",
+  "password değeri 6 karakterden büyük olmalıdır.": "The password must be at least 6 characters.",
+  "Email adresinizi doğrulayamadık.": "Please enter valid email address.",
+  "Epostayı gönderemedik, lütfen tekrar deneyin.": "Please try again, we could not send the email to your email address.",
+  "İnternet bağlantınızı kontrol edip tekrar deneyiniz.": "Please check your internet connection."
 };
 
 export default function Signup() {
@@ -54,7 +53,7 @@ export default function Signup() {
       setLoad(false)
     })
     .catch((err) => {
-      setErrors(['Please check your internet connection.'])
+      setErrors(['İnternet bağlantınızı kontrol edip tekrar deneyiniz.'])
       setLoad(false)
     })
   }
@@ -92,7 +91,7 @@ export default function Signup() {
                     {errors.map((error, idx) => {
                       return (
                         <Fragment key={`signup-err-${idx}`}>
-                          {i18n.currentLocale === 'tr' ? BackendErrors[error] : error}
+                          {i18n.currentLocale === 'tr' ? error : BackendErrors[error]}
                           <br />
                         </Fragment>)
                     })}
