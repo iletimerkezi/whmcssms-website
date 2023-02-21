@@ -71,7 +71,7 @@ function errorRsp(errors) {
 
 async function createAccount(form) {
 
-  return fetch('https://app.ilet.io/api/panel/signup', {
+  return fetch('https://www.iletimerkezi.com/new/panel/auth/signup', {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ async function sendEmail(form) {
     Merhaba,
     <br />
     <br />
-    Eklentiyi indirmek için <a href="https://www.whmcssms.com/whmcs8.zip">tıklayınız</a>.
+    Eklentiyi indirmek için <a href="https://www.whmcssms.com/iletimerkezi.zip">tıklayınız</a>.
     <br />
     <br />
     <ul>
@@ -119,7 +119,7 @@ async function sendEmail(form) {
     Hi,
     <br />
     <br />
-    <a href="https://www.whmcssms.com/whmcs8.zip">Click</a> to download the plugin.
+    <a href="https://www.whmcssms.com/iletimerkezi.zip">Click</a> to download the plugin.
     <br />
     <br />
     <ul>
