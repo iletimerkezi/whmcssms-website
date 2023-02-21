@@ -41,6 +41,8 @@ function parseSignupResponse(response) {
   let falseFlag      = "Already member, if you forget password, try to recover."
   let errorContainer = [];
 
+  console.log('parseSignupResponse -> ', response)
+
   for(const err in response.data?.error) {
     if(err.includes('is_')) {
       continue
@@ -74,7 +76,8 @@ async function createAccount(form) {
   return fetch('https://www.iletimerkezi.com/new/panel/auth/signup', {
     method: 'POST',
     headers: {
-        'Content-Type': 'application/json',
+      'Content-Type': 'application/json',
+      'Content-Language': 'tr'
     },
     body: JSON.stringify({
       aggrement: true,
