@@ -38,10 +38,8 @@ export async function onRequestPost({request}) {
 }
 
 function parseSignupResponse(response) {
-  let falseFlag      = "Already member, if you forget password, try to recover."
+  let falseFlag      = "Bu cep telefonu numarası kullanımda, giriş yapmak için şifrenizi yenileyebilirsiniz."
   let errorContainer = [];
-
-  console.log('parseSignupResponse -> ', response)
 
   for(const err in response.data?.error) {
     if(err.includes('is_')) {
